@@ -623,6 +623,13 @@ header, main, footer { position: relative; z-index: 2; }
     color: #fff;
     box-shadow: 0 14px 28px -12px var(--accent-glow);
 }
+/* Logos en SVG inline : héritent de la couleur du lien (animation hover) */
+.social-link svg {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+    display: block;
+}
 
 /* =====================================================
    FOOTER
