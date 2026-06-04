@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portofolio de Hamdaane CHITOU</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <?php session_start(); ?>
+    <header class="header">
+        <a href="#" class="logo">CHAMDAANE</a>
+
+        <nav class="navbar">
+            <a class="active" href="#Acceuil">Acceuil</a>
+            <a href="#compétences">Mes compétences</a>
+            <a href="#projets">Mes projets</a>
+            <a href="#Contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="Acceuil">
+            <div class="home">
+                <h1>Hello, je suis Hamdaane CHITOU</h1>
+
+                <h2>Étudiant en Data Science et Digitalisation</h2>
+                <p>je me spécialise dans l’analyse de données, la
+                    programmation
+                    et les systèmes numériques.</p>
+
+                <p>En tant que futur Data Scientist, je développe des compétences solides en Python, en traitement de
+                    données et en résolution de problèmes complexes. Je m’intéresse également à la cybersécurité, un
+                    domaine
+                    essentiel pour garantir la fiabilité et la protection des systèmes informatiques.</p>
+
+                <p>
+
+                    Rigoureux, curieux et orienté résultats, je m’investis dans chaque projet avec l’objectif de
+                    concevoir
+                    des solutions pertinentes, innovantes et adaptées aux besoins réels.</p>
+
+                <p>
+                    Mon ambition est de mettre la data au service de la prise de décision et de l’innovation.</p>
+                <div class="hamo-profile"><img src="hamdaane.jpeg" alt="mon profile"></div>
+            </div>
+        </section>
+
+        <section id="compétences">
+            <div class="skills">
+                <h2>Mes compétences</h2>
+                <ul>
+                    <li><strong>Data Science (en évolution) : </strong> Analyse et exploitation de données,
+                        compréhension des concepts
+                        fondamentaux, résolution de problèmes basés sur les données</li>
+
+                    <li><strong>Cybersécurité : </strong> Notions de base en sécurité des systèmes et protection des
+                        données, logique
+                        algorithmique(Cesar, XOR, AES ...)</li>
+
+                    <li><strong>Programmation : </strong> Python, résolution de problèmes(en evolution)</li>
+
+                    <li><strong>Développement Web : </strong> HTML, CSS, JavaScript, React création d’interfaces simples
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projets">
+            <div class="projets">
+                <h2>Mes projets</h2>
+                <ul>
+                    <li>
+                        <strong>Projet A:</strong> Analyse des tendances et du comportement de la clientèle d'une base
+                        de données nommée CVC.
+                        <div class="container">
+                            <img src="image2.png" alt="CVC analyse projet">
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Projet B:</strong> Analyse des facteurs déterminants la mortalité et la durée de séjour
+                        en soin intensif de la base de donnée clinique
+                        <div class="container">
+                            <img src="clinic.png" alt="Analyse clinique projet">
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Projet C:</strong> Réalisation d'une application de Gestion de tâche utilisable par
+                        tous.
+                        <div class="container">
+                            <img src="image1.png" alt="GetShift projet">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="Contact">
+            <div class="contact-section">
+                <h2>Contactez-moi:  </h2>
+
+                <?php
+                if (isset($_SESSION['succes'])) {
+                    echo '<div style="color: green; padding: 10px; margin-bottom: 20px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px;">' . htmlspecialchars($_SESSION['succes']) . '</div>';
+                    unset($_SESSION['succes']);
+                }
+                if (isset($_SESSION['erreurs'])) {
+                    echo '<div style="color: red; padding: 10px; margin-bottom: 20px; background-color: #f8d7da; border: 1px solid #f5c6cb; border-radius: 4px;"><ul style="margin: 0;">';
+                    foreach ($_SESSION['erreurs'] as $erreur) {
+                        echo '<li>' . htmlspecialchars($erreur) . '</li>';
+                    }
+                    echo '</ul></div>';
+                    unset($_SESSION['erreurs']);
+                }
+                ?>
+
+                <form class="contact-form" action="contact_process.php" method="post">
+                    <div class="form-group">
+                        <label for="nom">Nom complet <span class="required"></span></label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom complet">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse Email <span class="required"></span></label>
+                        <input type="email" id="email" name="email" required placeholder="votre.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sujet">Sujet</label>
+                        <input type="text" id="sujet" name="sujet" placeholder="Sujet de votre message">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span class="required"></span></label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Votre message..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Envoyer</button>
+                </form>
+
+                <div class="contact">
+                    <a href="https://www.instagram.com/hamdaane.chitou" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://www.linkedin.com/in/hamdaane-chitou-9249b9390/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.github.com/chamdaane-a11y" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+                    <a href="https://wa.me/0156383374" target="_blank" rel="noopener noreferrer"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="mailto:chamdaane@gmail.com"><i class='bx bxl-gmail'></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        Merci à tous de m'avoir suivis pour cette présentationde mon portfolio. N'hésitez pas à me contacter pour toute question ou collaboration future. Merci
+    </footer>
+
+</body>
+
+</html>

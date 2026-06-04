@@ -1,0 +1,17 @@
+# Configuration locale avec identifiants de base de données — NE PAS publier
+config.php
+
+# Outils / éditeurs
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs & temporaires
+*.log
+*.tmp
+
+# Dépendances éventuelles
+/vendor/
+node_modules/

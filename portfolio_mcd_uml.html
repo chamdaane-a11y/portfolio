@@ -1,0 +1,183 @@
+
+<style>
+  h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .tabs{display:flex;gap:8px;margin-bottom:16px;padding-top:12px}
+  .tab{padding:6px 18px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:500;border:1.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);transition:all .2s}
+  .tab.active{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
+  .panel{display:none}.panel.active{display:block}
+  #m1 svg,.mermaid svg{width:100%!important;max-width:100%}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--color-text-secondary)}
+  .legend span{display:flex;align-items:center;gap:6px}
+  .dot{width:10px;height:10px;border-radius:50%}
+</style>
+<h2 class="sr-only">MCD Merise et diagramme UML de la base de données portfolio de Rodérick OBINE</h2>
+<div class="tabs">
+  <button class="tab active" onclick="showTab('merise')">MCD Merise</button>
+  <button class="tab" onclick="showTab('uml')">Diagramme UML</button>
+</div>
+
+<div id="merise" class="panel active">
+  <div id="m1"></div>
+  <div class="legend">
+    <span><span class="dot" style="background:#534AB7"></span>Entité principale</span>
+    <span><span class="dot" style="background:#0F6E56"></span>Entité liée</span>
+    <span><span class="dot" style="background:#993C1D"></span>Table d'association</span>
+  </div>
+</div>
+
+<div id="uml" class="panel">
+  <div id="m2"></div>
+</div>
+
+<script type="module">
+import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+await document.fonts.ready;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: '"Anthropic Sans", sans-serif',
+  themeVariables: {
+    darkMode: dark,
+    fontSize: '13px',
+    fontFamily: '"Anthropic Sans", sans-serif',
+    lineColor: dark ? '#9c9a92' : '#73726c',
+    textColor: dark ? '#c2c0b6' : '#3d3d3a',
+    primaryColor: dark ? '#3C3489' : '#EEEDFE',
+    primaryTextColor: dark ? '#CECBF6' : '#3C3489',
+    primaryBorderColor: dark ? '#7F77DD' : '#534AB7',
+    secondaryColor: dark ? '#085041' : '#E1F5EE',
+    tertiaryColor: dark ? '#712B13' : '#FAECE7',
+  },
+});
+
+const meriseCode = `erDiagram
+  UTILISATEUR {
+    int id PK
+    string nom
+    string prenom
+    string email
+    string titre
+    text biographie
+    string photo_url
+    string cv_url
+    timestamp created_at
+  }
+  COMPETENCE {
+    int id PK
+    string nom
+    text description
+    int niveau
+    string categorie
+    int utilisateur_id FK
+  }
+  PROJET {
+    int id PK
+    string titre
+    text description
+    string image_url
+    string lien_demo
+    string lien_github
+    date date_creation
+    int utilisateur_id FK
+  }
+  TECHNOLOGIE {
+    int id PK
+    string nom
+    string type
+  }
+  PROJET_TECHNOLOGIE {
+    int projet_id FK
+    int technologie_id FK
+  }
+  MESSAGE {
+    int id PK
+    string nom_expediteur
+    string email
+    string sujet
+    text contenu
+    timestamp date_envoi
+    enum statut
+    int utilisateur_id FK
+  }
+
+  UTILISATEUR ||--o{ COMPETENCE : "possède"
+  UTILISATEUR ||--o{ PROJET : "réalise"
+  UTILISATEUR ||--o{ MESSAGE : "reçoit"
+  PROJET ||--o{ PROJET_TECHNOLOGIE : "utilise"
+  TECHNOLOGIE ||--o{ PROJET_TECHNOLOGIE : "est utilisée dans"
+`;
+
+const umlCode = `classDiagram
+  class Utilisateur {
+    +int id
+    +String nom
+    +String prenom
+    +String email
+    +String titre
+    +String biographie
+    +String photo_url
+    +String cv_url
+    +DateTime created_at
+  }
+  class Competence {
+    +int id
+    +String nom
+    +String description
+    +int niveau
+    +String categorie
+    +int utilisateur_id
+  }
+  class Projet {
+    +int id
+    +String titre
+    +String description
+    +String image_url
+    +String lien_demo
+    +String lien_github
+    +Date date_creation
+    +int utilisateur_id
+  }
+  class Technologie {
+    +int id
+    +String nom
+    +String type
+  }
+  class ProjetTechnologie {
+    +int projet_id
+    +int technologie_id
+  }
+  class Message {
+    +int id
+    +String nom_expediteur
+    +String email
+    +String sujet
+    +String contenu
+    +DateTime date_envoi
+    +String statut
+    +int utilisateur_id
+  }
+
+  Utilisateur "1" --> "0..*" Competence : possède
+  Utilisateur "1" --> "0..*" Projet : réalise
+  Utilisateur "1" --> "0..*" Message : reçoit
+  Projet "1" --> "0..*" ProjetTechnologie : utilise
+  Technologie "1" --> "0..*" ProjetTechnologie : est utilisée dans
+`;
+
+async function render(code, targetId) {
+  const { svg } = await mermaid.render('svg-'+targetId, code);
+  document.getElementById(targetId).innerHTML = svg;
+}
+
+await render(meriseCode, 'm1');
+await render(umlCode, 'm2');
+</script>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', ['merise','uml'][i] === name));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(name).classList.add('active');
+}
+</script>
