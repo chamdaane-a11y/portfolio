@@ -80,9 +80,10 @@ $contactEmail = $user ? $user['email'] : 'chamdaane@gmail.com';
 
             <div class="socials">
                 <a class="social-link" href="mailto:<?php echo htmlspecialchars($contactEmail); ?>" aria-label="Email" title="Email"><i class='bx bxl-gmail'></i></a>
-                <a class="social-link" href="https://github.com/TON-PSEUDO" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class='bx bxl-github'></i></a>
-                <a class="social-link" href="https://www.linkedin.com/in/TON-PROFIL" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-                <a class="social-link" href="https://www.instagram.com/TON-PSEUDO" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a class="social-link" href="https://github.com/chamdaane-a11y" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class='bx bxl-github'></i></a>
+                <a class="social-link" href="https://www.linkedin.com/in/hamdaane-chitou-9249b9390/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a class="social-link" href="https://www.instagram.com/hamdaane.chitou" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a class="social-link" href="https://wa.me/0156383374" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
             </div>
         </aside>
         </div><!-- /.contact-grid -->
