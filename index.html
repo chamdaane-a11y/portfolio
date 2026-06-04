@@ -1,155 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portofolio de Hamdaane CHITOU</title>
+
+    <!-- SEO de base -->
+    <title>Hamdaane Chitou — Data Scientist & Développeur | Portfolio</title>
+    <meta name="description" content="Portfolio de Hamdaane Chitou, étudiant en Data Science & Digitalisation au Bénin. Data, Python, cybersécurité et développement web. Découvrez mes projets et compétences.">
+    <meta name="keywords" content="Hamdaane Chitou, Hamdaane CHITOU, portfolio, data science, data scientist, Python, cybersécurité, développeur web, Bénin">
+    <meta name="author" content="Hamdaane Chitou">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hamdaane-chitou.vercel.app/">
+    <meta name="theme-color" content="#06121b">
+
+    <!-- Open Graph (aperçu LinkedIn / Facebook / WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hamdaane Chitou — Data Scientist & Développeur">
+    <meta property="og:description" content="Étudiant en Data Science & Digitalisation. Data, Python, cybersécurité et développement web. Découvrez mes projets.">
+    <meta property="og:image" content="https://hamdaane-chitou.vercel.app/hamdaane.jpeg">
+    <meta property="og:url" content="https://hamdaane-chitou.vercel.app/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Portfolio de Hamdaane Chitou">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hamdaane Chitou — Data Scientist & Développeur">
+    <meta name="twitter:description" content="Étudiant en Data Science & Digitalisation. Data, Python, cybersécurité et développement web.">
+    <meta name="twitter:image" content="https://hamdaane-chitou.vercel.app/hamdaane.jpeg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="hamdaane.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="hamdaane.jpeg">
+
+    <!-- Polices & icônes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="enhance.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <!-- Données structurées (Google : fiche "Personne") -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Hamdaane Chitou",
+      "alternateName": "Hamdaane CHITOU",
+      "url": "https://hamdaane-chitou.vercel.app/",
+      "image": "https://hamdaane-chitou.vercel.app/hamdaane.jpeg",
+      "jobTitle": "Étudiant en Data Science & Digitalisation",
+      "email": "mailto:chamdaane@gmail.com",
+      "nationality": "Bénin",
+      "knowsAbout": ["Data Science", "Python", "Cybersécurité", "Développement web", "Analyse de données"],
+      "sameAs": [
+        "https://github.com/chamdaane-a11y",
+        "https://www.linkedin.com/in/hamdaane-chitou-9249b9390/",
+        "https://www.instagram.com/hamdaane.chitou"
+      ]
+    }
+    </script>
+
+    <script src="enhance.js" defer></script>
 </head>
 
 <body>
-    <?php session_start(); ?>
-    <header class="header">
-        <a href="#" class="logo">CHAMDAANE</a>
 
-        <nav class="navbar">
-            <a class="active" href="#Acceuil">Acceuil</a>
-            <a href="#compétences">Mes compétences</a>
-            <a href="#projets">Mes projets</a>
-            <a href="#Contact">Contact</a>
+    <header class="header">
+        <a href="#accueil" class="logo">CHAMDAANE<span class="logo-ghost">(#GHOST)</span></a>
+
+        <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="navbar" id="navbar">
+            <a href="#accueil" class="nav-link active">Accueil</a>
+            <a href="#competences" class="nav-link">Mes compétences</a>
+            <a href="#projets" class="nav-link">Mes projets</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
+
+        <div class="nav-overlay" id="nav-overlay"></div>
     </header>
 
     <main>
+
+        <!-- ============ ACCUEIL ============ -->
         <section id="Acceuil">
+            <span id="accueil" class="anchor-offset"></span>
             <div class="home">
-                <h1>Hello, je suis Hamdaane CHITOU</h1>
+                <span class="hero-badge reveal" style="--d:0s">
+                    <span class="pulse"></span> Disponible pour de nouveaux projets
+                </span>
 
-                <h2>Étudiant en Data Science et Digitalisation</h2>
-                <p>je me spécialise dans l’analyse de données, la
-                    programmation
-                    et les systèmes numériques.</p>
+                <h1 class="reveal" style="--d:0.08s">
+                    Bonjour, je suis <span class="grad-text">Hamdaane CHITOU</span>
+                </h1>
 
-                <p>En tant que futur Data Scientist, je développe des compétences solides en Python, en traitement de
-                    données et en résolution de problèmes complexes. Je m’intéresse également à la cybersécurité, un
-                    domaine
-                    essentiel pour garantir la fiabilité et la protection des systèmes informatiques.</p>
+                <h2 class="reveal" style="--d:0.16s">
+                    <span class="type-target" data-words="Étudiant en Data Science et Digitalisation|Futur Data Scientist|Passionné de cybersécurité|Développeur web"></span>
+                </h2>
 
-                <p>
+                <p class="reveal" style="--d:0.24s">
+                    Je me spécialise dans l'analyse de données, la programmation et les systèmes numériques.
+                    En tant que futur Data Scientist, je développe des compétences solides en Python, en traitement
+                    de données et en résolution de problèmes complexes. Je m'intéresse également à la cybersécurité,
+                    un domaine essentiel pour garantir la fiabilité et la protection des systèmes informatiques.
+                    Rigoureux, curieux et orienté résultats, je m'investis dans chaque projet avec l'objectif de
+                    concevoir des solutions pertinentes, innovantes et adaptées aux besoins réels.
+                    Mon ambition est de mettre la data au service de la prise de décision et de l'innovation.
+                </p>
 
-                    Rigoureux, curieux et orienté résultats, je m’investis dans chaque projet avec l’objectif de
-                    concevoir
-                    des solutions pertinentes, innovantes et adaptées aux besoins réels.</p>
+                <div class="hero-cta reveal" style="--d:0.32s">
+                    <a href="#projets" class="btn btn-primary"><i class='bx bx-rocket'></i> Voir mes projets</a>
+                    <a href="#contact" class="btn btn-ghost"><i class='bx bx-envelope'></i> Me contacter</a>
+                </div>
 
-                <p>
-                    Mon ambition est de mettre la data au service de la prise de décision et de l’innovation.</p>
-                <div class="hamo-profile"><img src="hamdaane.jpeg" alt="mon profile"></div>
+                <div class="hamo-profile reveal reveal-zoom" style="--d:0.4s">
+                    <img src="hamdaane.jpeg" alt="Photo de Hamdaane Chitou, étudiant en Data Science" onerror="this.style.display='none'">
+                </div>
             </div>
+
+            <a href="#competences" class="scroll-hint" aria-label="Découvrir mes compétences">
+                <span class="mouse"><span class="wheel"></span></span>
+                Explorer
+            </a>
         </section>
 
+        <!-- ============ COMPÉTENCES ============ -->
         <section id="compétences">
+            <span id="competences" class="anchor-offset"></span>
             <div class="skills">
-                <h2>Mes compétences</h2>
-                <ul>
-                    <li><strong>Data Science (en évolution) : </strong> Analyse et exploitation de données,
-                        compréhension des concepts
-                        fondamentaux, résolution de problèmes basés sur les données</li>
+                <div class="section-head reveal">
+                    <span class="section-eyebrow">Ce que je maîtrise</span>
+                    <h2 class="section-title-xl">Mes compétences</h2>
+                </div>
 
-                    <li><strong>Cybersécurité : </strong> Notions de base en sécurité des systèmes et protection des
-                        données, logique
-                        algorithmique(Cesar, XOR, AES ...)</li>
+                <div class="skills-grid">
+                    <article class="skill-card reveal" style="--d:0s">
+                        <span class="skill-icon"><i class='bx bx-bar-chart-alt-2'></i></span>
+                        <h3>Data Science</h3>
+                        <p>Analyse et exploitation de données, compréhension des concepts fondamentaux, résolution de problèmes basés sur les données.</p>
+                        <div class="skill-bar" data-level="70"><span></span></div>
+                        <div class="skill-meta"><span>En évolution</span><span class="pct">70%</span></div>
+                    </article>
 
-                    <li><strong>Programmation : </strong> Python, résolution de problèmes(en evolution)</li>
+                    <article class="skill-card reveal" style="--d:0.05s">
+                        <span class="skill-icon"><i class='bx bx-shield-quarter'></i></span>
+                        <h3>Cybersécurité</h3>
+                        <p>Notions de base en sécurité des systèmes et protection des données, logique algorithmique (César, XOR, AES…).</p>
+                        <div class="skill-bar" data-level="60"><span></span></div>
+                        <div class="skill-meta"><span>En évolution</span><span class="pct">60%</span></div>
+                    </article>
 
-                    <li><strong>Développement Web : </strong> HTML, CSS, JavaScript, React création d’interfaces simples
-                    </li>
-                </ul>
+                    <article class="skill-card reveal" style="--d:0.1s">
+                        <span class="skill-icon"><i class='bx bx-code-alt'></i></span>
+                        <h3>Programmation</h3>
+                        <p>Python, structures de données et résolution de problèmes algorithmiques.</p>
+                        <div class="skill-bar" data-level="75"><span></span></div>
+                        <div class="skill-meta"><span>En évolution</span><span class="pct">75%</span></div>
+                    </article>
+
+                    <article class="skill-card reveal" style="--d:0.15s">
+                        <span class="skill-icon"><i class='bx bx-window-alt'></i></span>
+                        <h3>Développement Web</h3>
+                        <p>HTML, CSS, JavaScript et React pour la création d'interfaces modernes et réactives.</p>
+                        <div class="skill-bar" data-level="72"><span></span></div>
+                        <div class="skill-meta"><span>En évolution</span><span class="pct">72%</span></div>
+                    </article>
+                </div>
             </div>
         </section>
 
+        <!-- ============ PROJETS ============ -->
         <section id="projets">
+            <span id="projets-anchor" class="anchor-offset"></span>
             <div class="projets">
-                <h2>Mes projets</h2>
-                <ul>
-                    <li>
-                        <strong>Projet A:</strong> Analyse des tendances et du comportement de la clientèle d'une base
-                        de données nommée CVC.
-                        <div class="container">
-                            <img src="image2.png" alt="CVC analyse projet">
-                        </div>
-                    </li>
-                    <li>
-                        <strong>Projet B:</strong> Analyse des facteurs déterminants la mortalité et la durée de séjour
-                        en soin intensif de la base de donnée clinique
-                        <div class="container">
-                            <img src="clinic.png" alt="Analyse clinique projet">
-                        </div>
-                    </li>
-                    <li>
-                        <strong>Projet C:</strong> Réalisation d'une application de Gestion de tâche utilisable par
-                        tous.
-                        <div class="container">
-                            <img src="image1.png" alt="GetShift projet">
-                        </div>
-                    </li>
-                </ul>
+                <div class="section-head reveal">
+                    <span class="section-eyebrow">Réalisations</span>
+                    <h2 class="section-title-xl">Mes projets</h2>
+                </div>
+
+                <div class="carousel-3d reveal" data-autoplay="5500">
+                    <button class="car-nav car-prev" aria-label="Projet précédent"><i class='bx bx-chevron-left'></i></button>
+
+                    <div class="carousel-stage">
+                        <article class="project-card">
+                            <div class="project-thumb">
+                                <span class="project-tag">Data Science</span>
+                                <img src="image2.png" alt="Projet A — analyse de la clientèle" loading="lazy"
+                                     onerror="this.closest('.project-thumb').style.display='none'">
+                            </div>
+                            <div class="project-body">
+                                <h3>Projet A — Analyse clientèle</h3>
+                                <p>Analyse des tendances et du comportement de la clientèle d'une base de données nommée CVC.</p>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-thumb">
+                                <span class="project-tag">Data Science</span>
+                                <img src="clinic.png" alt="Projet B — analyse clinique" loading="lazy"
+                                     onerror="this.closest('.project-thumb').style.display='none'">
+                            </div>
+                            <div class="project-body">
+                                <h3>Projet B — Données cliniques</h3>
+                                <p>Analyse des facteurs déterminant la mortalité et la durée de séjour en soins intensifs à partir d'une base de données clinique.</p>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-thumb">
+                                <span class="project-tag">Développement</span>
+                                <img src="image1.png" alt="Projet C — application de gestion de tâches" loading="lazy"
+                                     onerror="this.closest('.project-thumb').style.display='none'">
+                            </div>
+                            <div class="project-body">
+                                <h3>Projet C — Gestion de tâches</h3>
+                                <p>Réalisation d'une application de gestion de tâches simple et utilisable par tous.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <button class="car-nav car-next" aria-label="Projet suivant"><i class='bx bx-chevron-right'></i></button>
+                    <div class="car-dots" aria-hidden="true"></div>
+                </div>
             </div>
         </section>
 
+        <!-- ============ CONTACT ============ -->
         <section id="Contact">
-            <div class="contact-section">
-                <h2>Contactez-moi:  </h2>
+            <span id="contact" class="anchor-offset"></span>
+            <div class="contact-section reveal">
+                <div class="section-head">
+                    <span class="section-eyebrow">Restons en contact</span>
+                    <h2 class="section-title-xl">Contactez Hamdaane CHITOU</h2>
+                </div>
 
-                <?php
-                if (isset($_SESSION['succes'])) {
-                    echo '<div style="color: green; padding: 10px; margin-bottom: 20px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px;">' . htmlspecialchars($_SESSION['succes']) . '</div>';
-                    unset($_SESSION['succes']);
-                }
-                if (isset($_SESSION['erreurs'])) {
-                    echo '<div style="color: red; padding: 10px; margin-bottom: 20px; background-color: #f8d7da; border: 1px solid #f5c6cb; border-radius: 4px;"><ul style="margin: 0;">';
-                    foreach ($_SESSION['erreurs'] as $erreur) {
-                        echo '<li>' . htmlspecialchars($erreur) . '</li>';
-                    }
-                    echo '</ul></div>';
-                    unset($_SESSION['erreurs']);
-                }
-                ?>
-
-                <form class="contact-form" action="contact_process.php" method="post">
-                    <div class="form-group">
-                        <label for="nom">Nom complet <span class="required"></span></label>
-                        <input type="text" id="nom" name="nom" required placeholder="Votre nom complet">
+                <div class="contact-grid">
+                    <div class="contact-form-wrap">
+                        <div id="form-status" role="status"></div>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="nom">Nom complet</label>
+                                <input type="text" id="nom" name="nom" required placeholder="Votre nom complet">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Adresse Email</label>
+                                <input type="email" id="email" name="email" required placeholder="votre.email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="sujet">Sujet</label>
+                                <input type="text" id="sujet" name="sujet" placeholder="Sujet de votre message">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+                            </div>
+                            <!-- Anti-spam honeypot (ne pas remplir) -->
+                            <input type="text" name="_honey" style="display:none">
+                            <button type="submit" class="btn-submit"><i class='bx bx-send'></i> Envoyer le message</button>
+                        </form>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Adresse Email <span class="required"></span></label>
-                        <input type="email" id="email" name="email" required placeholder="votre.email@example.com">
-                    </div>
+                    <aside class="contact-aside">
+                        <p>Une question, une opportunité ou simplement envie d'échanger ? Je réponds rapidement, n'hésitez pas&nbsp;!</p>
 
-                    <div class="form-group">
-                        <label for="sujet">Sujet</label>
-                        <input type="text" id="sujet" name="sujet" placeholder="Sujet de votre message">
-                    </div>
+                        <a class="contact-info-item" href="mailto:chamdaane@gmail.com">
+                            <i class='bx bx-envelope'></i><span>chamdaane@gmail.com</span>
+                        </a>
+                        <div class="contact-info-item">
+                            <i class='bx bx-map'></i><span>Bénin — disponible en télétravail</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class='bx bx-time-five'></i><span>Réponse sous 24–48&nbsp;h</span>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="message">Message <span class="required"></span></label>
-                        <textarea id="message" name="message" rows="5" required
-                            placeholder="Votre message..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-submit">Envoyer</button>
-                </form>
-
-                <div class="contact">
-                    <a href="https://www.instagram.com/hamdaane.chitou" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
-                    <a href="https://www.linkedin.com/in/hamdaane-chitou-9249b9390/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://www.github.com/chamdaane-a11y" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
-                    <a href="https://wa.me/0156383374" target="_blank" rel="noopener noreferrer"><i class='bx bxl-whatsapp'></i></a>
-                    <a href="mailto:chamdaane@gmail.com"><i class='bx bxl-gmail'></i></a>
+                        <div class="socials">
+                            <a class="social-link" href="mailto:chamdaane@gmail.com" aria-label="Email" title="Email"><i class='bx bxl-gmail'></i></a>
+                            <a class="social-link" href="https://github.com/chamdaane-a11y" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class='bx bxl-github'></i></a>
+                            <a class="social-link" href="https://www.linkedin.com/in/hamdaane-chitou-9249b9390/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                            <a class="social-link" href="https://www.instagram.com/hamdaane.chitou" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class='bx bxl-instagram'></i></a>
+                            <a class="social-link" href="https://wa.me/2290156383374" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </section>
@@ -157,9 +290,92 @@
     </main>
 
     <footer>
-        Merci à tous de m'avoir suivis pour cette présentationde mon portfolio. N'hésitez pas à me contacter pour toute question ou collaboration future. Merci
+        <div class="footer-inner">
+            <p>Merci d'avoir parcouru mon portfolio. N'hésitez pas à me contacter pour toute question ou collaboration.</p>
+            <p>&copy; <span id="year"></span> Hamdaane CHITOU — Conçu avec <span class="footer-heart">&#10084;</span> et beaucoup de café.</p>
+        </div>
     </footer>
 
-</body>
+    <script>
+    // Année dynamique
+    document.getElementById('year').textContent = new Date().getFullYear();
 
+    // ---- Menu hamburger ----
+    (function () {
+        const hamburger = document.getElementById('hamburger');
+        const navbar    = document.getElementById('navbar');
+        const overlay   = document.getElementById('nav-overlay');
+        const close = () => {
+            navbar.classList.remove('open');
+            overlay.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        };
+        hamburger.addEventListener('click', () => {
+            const open = navbar.classList.toggle('open');
+            overlay.classList.toggle('open', open);
+            hamburger.classList.toggle('open', open);
+            hamburger.setAttribute('aria-expanded', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        });
+        overlay.addEventListener('click', close);
+        navbar.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    })();
+
+    // ---- Scrollspy : surligne le lien de la section visible ----
+    (function () {
+        const links = Array.from(document.querySelectorAll('.nav-link'));
+        const map = { 'Acceuil': 'accueil', 'compétences': 'competences', 'projets': 'projets', 'Contact': 'contact' };
+        const sections = Object.keys(map).map(id => document.getElementById(id)).filter(Boolean);
+        if (!('IntersectionObserver' in window)) return;
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(en => {
+                if (en.isIntersecting) {
+                    const target = map[en.target.id];
+                    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + target));
+                }
+            });
+        }, { threshold: 0.5 });
+        sections.forEach(s => io.observe(s));
+    })();
+
+    // ---- Formulaire de contact (FormSubmit, sans backend) ----
+    (function () {
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+        if (!form) return;
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type=submit]');
+            const original = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> Envoi…";
+            status.innerHTML = '';
+            try {
+                const data = Object.fromEntries(new FormData(form).entries());
+                data._subject = "Nouveau message depuis le portfolio";
+                const res = await fetch('https://formsubmit.co/ajax/chamdaane@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (res.ok) {
+                    status.innerHTML = '<div style="color:#4ade80;padding:12px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.3);border-radius:8px;">✅ Message envoyé ! Merci, je vous réponds vite.</div>';
+                    form.reset();
+                } else {
+                    throw new Error('Échec');
+                }
+            } catch (err) {
+                status.innerHTML = '<div style="color:#ff6b6b;padding:12px;background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.3);border-radius:8px;">❌ Échec de l\'envoi. Écrivez-moi directement à chamdaane@gmail.com.</div>';
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = original;
+            }
+        });
+    })();
+    </script>
+
+</body>
 </html>

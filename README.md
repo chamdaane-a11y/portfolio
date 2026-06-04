@@ -21,7 +21,19 @@ Thème sombre, accent bleu, et une couche d'animations modernes.
 - HTML, CSS (vanilla, custom properties), JavaScript (vanilla)
 - [Boxicons](https://boxicons.com/) pour les icônes
 
-## 🚀 Installation
+## 🌐 Déploiement (Vercel — version statique)
+
+Le site est aussi disponible en **version statique** (`index.html`) déployable sur **Vercel** :
+contenu, animations, carrousel 3D et SEO inclus, sans serveur PHP.
+
+1. Aller sur [vercel.com](https://vercel.com) → se connecter avec GitHub.
+2. **Add New… → Project** → importer le dépôt `portfolio`.
+3. Framework : **Other** (aucun build) → **Deploy**.
+4. Renommer le projet en `hamdaane-chitou` pour obtenir `https://hamdaane-chitou.vercel.app`.
+
+> ℹ️ Vercel n'exécute pas PHP : c'est `index.html` (statique) qui est servi. La version PHP reste utilisable en local.
+
+## 🚀 Installation (version PHP, en local)
 
 1. **Cloner le dépôt**
    ```bash

@@ -16,6 +16,13 @@
 
 html { scroll-behavior: smooth; }
 
+/* Ancres : décalées sous le header fixe (site statique mono-page) */
+.anchor-offset {
+    position: absolute;
+    top: calc(-1 * var(--header-h));
+    visibility: hidden;
+}
+
 /* Sélection de texte stylée */
 ::selection { background: var(--accent); color: #06121b; }
 
