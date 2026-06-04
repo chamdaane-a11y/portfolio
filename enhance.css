@@ -414,11 +414,19 @@ header, main, footer { position: relative; z-index: 2; }
     position: relative;
     margin-top: clamp(22px, 4vh, 44px);
     perspective: 1500px;
+    overflow-x: clip;            /* empêche les cartes latérales de créer un scroll horizontal */
 }
 .carousel-stage {
     position: relative;
-    height: clamp(440px, 64vh, 560px);
+    height: clamp(480px, 62vh, 580px);
     transform-style: preserve-3d;
+}
+/* Description tronquée pour des cartes de hauteur homogène */
+.carousel-3d .project-body p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .project-card {
@@ -471,8 +479,8 @@ header, main, footer { position: relative; z-index: 2; }
     transition: background 0.3s, border-color 0.3s, transform 0.3s;
 }
 .car-nav:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-50%) scale(1.08); }
-.car-prev { left: clamp(-6px, 1vw, 18px); }
-.car-next { right: clamp(-6px, 1vw, 18px); }
+.car-prev { left: clamp(2px, 1vw, 18px); }
+.car-next { right: clamp(2px, 1vw, 18px); }
 
 /* Points indicateurs */
 .car-dots {
@@ -630,6 +638,58 @@ footer .footer-heart { color: var(--accent-2); }
     background-size: 180% auto;
 }
 .btn-submit:hover { background-position: right center; }
+
+/* =====================================================
+   RESPONSIVE — réglages fins des composants premium
+===================================================== */
+
+/* Garde anti-débordement horizontal (aurora, carrousel, etc.)
+   'clip' ne crée pas de conteneur de scroll → n'affecte pas la barre de progression */
+body { overflow-x: clip; }
+
+/* --- Tablette & en dessous --- */
+@media (max-width: 1023px) {
+    .aurora-blob.b1 { width: 360px; height: 360px; }
+    .aurora-blob.b2 { width: 320px; height: 320px; }
+    .aurora-blob.b3 { display: none; }
+}
+
+/* --- Mobile (≤ 767px) --- */
+@media (max-width: 767px) {
+    /* Hero : indicateur de scroll masqué (évite le chevauchement) */
+    .scroll-hint { display: none; }
+    .hero-cta { width: 100%; }
+    .hero-cta .btn { flex: 1 1 auto; justify-content: center; }
+
+    /* Titres de section un peu plus compacts */
+    .section-title-xl::after { width: 54px; height: 3px; margin-top: 10px; }
+
+    /* Carrousel : cartes plus étroites, image plus basse, texte plus court */
+    .carousel-stage { height: clamp(440px, 76vh, 560px); }
+    .carousel-3d .project-card {
+        width: min(300px, 86vw);
+        margin-left: calc(min(300px, 86vw) / -2);
+    }
+    .carousel-3d .project-thumb { aspect-ratio: 16 / 9; }
+    .carousel-3d .project-body { padding: 16px; }
+    .carousel-3d .project-body p { -webkit-line-clamp: 3; }
+
+    .car-nav { width: 42px; height: 42px; font-size: 22px; }
+    .car-prev { left: 2px; }
+    .car-next { right: 2px; }
+}
+
+/* --- Très petits écrans (≤ 400px) --- */
+@media (max-width: 400px) {
+    .carousel-3d .project-card { width: 90vw; margin-left: -45vw; }
+    .skill-icon { width: 48px; height: 48px; font-size: 22px; }
+    .social-link { width: 46px; height: 46px; font-size: 22px; }
+}
+
+/* --- Pointeur grossier (tactile) : pas de tilt résiduel --- */
+@media (hover: none) {
+    .skill-card:hover, .project-card:hover { transform: none; }
+}
 
 /* =====================================================
    ACCESSIBILITÉ — reduced motion
